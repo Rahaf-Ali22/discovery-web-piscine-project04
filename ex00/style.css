@@ -1,5 +1,4 @@
 
-cat > style.css <<'CSS'
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root {
@@ -263,10 +262,10 @@ header nav {
     display: block;
 }
 .about-achievements {
-    max-width: 950px;
+    max-width: 1200px;
     margin: 65px auto 0;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 20px;
 }
 
@@ -349,7 +348,9 @@ header nav {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 30px;
 }
-
+.educore-card {
+    order: -1;
+}
 .project-card {
     height: 320px;
     perspective: 1200px;
@@ -437,11 +438,12 @@ header nav {
 }
 
 .hobbies-container {
-    max-width: 1200px;
-    margin: auto;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 22px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
 }
 
 .hobby-card {
@@ -1027,7 +1029,29 @@ body.dark-mode .theme-toggle {
     object-fit: fill;
     border-radius: 0;
 }
+/* CURRENTLY LEARNING CARD */
 
+.currently-learning {
+    grid-column: 1 / -1;
+}
+
+.currently-learning .skill-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.currently-learning .skill-list li {
+    margin: 0;
+}
+
+/* RESPONSIVE CURRENTLY LEARNING */
+
+@media (max-width: 700px) {
+    .currently-learning .skill-list {
+        grid-template-columns: 1fr;
+    }
+}
 
 /* FIX PROJECT CARD BACK - LIGHT MODE */
 
@@ -1092,3 +1116,32 @@ body:not(.dark-mode) .project-card-back .flip-button {
     }
 }
 
+/* RESPONSIVE ACHIEVEMENT CARDS */
+
+@media (max-width: 1000px) {
+    .about-achievements {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .about-achievements {
+        grid-template-columns: 1fr;
+    }
+}
+.personal-strengths {
+    max-width: 900px;
+    margin: 40px auto 0;
+    text-align: center;
+}
+
+.personal-strengths h3 {
+    font-size: 16px;
+    margin-bottom: 14px;
+    color: var(--accent);
+}
+
+.personal-strengths p {
+    line-height: 1.8;
+    color: inherit;
+}
