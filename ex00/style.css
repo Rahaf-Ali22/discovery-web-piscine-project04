@@ -363,8 +363,6 @@ header nav {
     transform-style: preserve-3d;
 }
 
-.project-card:hover .project-card-inner,
-.project-card:focus-within .project-card-inner,
 .project-card.is-flipped .project-card-inner {
     transform: rotateY(180deg);
 }
@@ -1078,5 +1076,19 @@ body:not(.dark-mode) .project-card-back .flip-button {
         z-index: 200;
     }
 
+}
+
+
+/* MOBILE THEME BUTTON FIX */
+
+@media (max-width: 700px) {
+    .theme-toggle {
+        position: static;
+        display: block;
+        width: fit-content;
+        margin: 20px auto;
+        padding: 11px 20px;
+        font-size: 0.85rem;
+    }
 }
 
